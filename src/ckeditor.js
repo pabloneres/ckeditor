@@ -5,7 +5,6 @@
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor.js';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat.js';
-import ImageBlock from '@ckeditor/ckeditor5-image/src/imageblock.js';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices.js';
@@ -16,7 +15,9 @@ import FontSize from '@ckeditor/ckeditor5-font/src/fontsize.js';
 import GeneralHtmlSupport from '@ckeditor/ckeditor5-html-support/src/generalhtmlsupport.js';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
 import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline.js';
+import Image from '@ckeditor/ckeditor5-image/src/image.js';
 import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert.js';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize.js';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle.js';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload.js';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent.js';
@@ -39,7 +40,6 @@ class Editor extends ClassicEditor {}
 Editor.builtinPlugins = [
 	Alignment,
 	Autoformat,
-	ImageBlock,
 	BlockQuote,
 	Bold,
 	CloudServices,
@@ -50,7 +50,9 @@ Editor.builtinPlugins = [
 	GeneralHtmlSupport,
 	Heading,
 	HorizontalLine,
+	Image,
 	ImageInsert,
+	ImageResize,
 	ImageStyle,
 	ImageUpload,
 	Indent,
@@ -74,28 +76,29 @@ Editor.defaultConfig = {
 		items: [
 			'heading',
 			'|',
+			'undo',
+			'redo',
+			'|',
 			'bold',
 			'italic',
 			'underline',
-			'link',
+			'fontSize',
+			'fontColor',
+			'|',
 			'bulletedList',
 			'numberedList',
-			'|',
 			'outdent',
 			'indent',
+			'alignment',
 			'|',
+			'link',
 			'imageUpload',
 			'blockQuote',
 			'insertTable',
-			'undo',
-			'redo',
 			'imageInsert',
-			'style',
-			'alignment',
 			'code',
-			'fontSize',
 			'horizontalLine',
-			'fontColor'
+			'style'
 		]
 	},
 	language: 'pt-br',
