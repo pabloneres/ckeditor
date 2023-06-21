@@ -19,12 +19,15 @@ import Image from '@ckeditor/ckeditor5-image/src/image.js';
 import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert.js';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize.js';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle.js';
+import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar.js';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload.js';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent.js';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic.js';
 import Link from '@ckeditor/ckeditor5-link/src/link.js';
+import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
 import Mention from '@ckeditor/ckeditor5-mention/src/mention.js';
+import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js';
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter.js';
@@ -54,12 +57,15 @@ Editor.builtinPlugins = [
 	ImageInsert,
 	ImageResize,
 	ImageStyle,
+	ImageToolbar,
 	ImageUpload,
 	Indent,
 	Italic,
 	Link,
+	LinkImage,
 	List,
 	Mention,
+	PageBreak,
 	Paragraph,
 	PasteFromOffice,
 	SimpleUploadAdapter,
@@ -90,6 +96,7 @@ Editor.defaultConfig = {
 			'outdent',
 			'indent',
 			'alignment',
+			'pageBreak',
 			'|',
 			'link',
 			'imageUpload',
@@ -102,6 +109,15 @@ Editor.defaultConfig = {
 		]
 	},
 	language: 'pt-br',
+	image: {
+		toolbar: [
+			'imageTextAlternative',
+			'imageStyle:inline',
+			'imageStyle:block',
+			'imageStyle:side',
+			'linkImage'
+		]
+	},
 	table: {
 		contentToolbar: [
 			'tableColumn',
